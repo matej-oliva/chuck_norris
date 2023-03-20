@@ -1,8 +1,44 @@
-body {
-  margin: 0;
-  font-family: 'Indie Flower', cursive;
+html, body {
+  font-family: 'Patrick Hand', cursive;
+  height: 100%;
+  text-align: center;
 }
 
-code {
-  font-family: 'Indie Flower', cursive;
+#root{
+  background: linear-gradient(347.95deg, #031E20 0%, #ECECEC 100%);
+}
+
+#chuckimage{
+  border-radius: 50%;
+}
+
+.bubble {
+  position: relative;
+  font-size: 18px;
+  line-height: 18px;
+  min-width: 146px;
+  width: 250px;
+  background: #fff;
+  border-radius: 40px;
+  text-align: center;
+  color: #000;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  z-index: 0;
+  justify-content: center;
+}
+
+.bubble-bottom-right::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-right: 94px solid #fff;
+  border-left:12px solid transparent;
+  border-top: 25px solid #fff;
+  border-bottom: 4px solid transparent;
+  right: 2px;
+  bottom: -4px;
+  z-index: -1;
 }

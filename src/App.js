@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box } from "@mui/material";
+import { AppTitle, TalkingChuck } from "./views/atoms";
+import { DisplayedJoke } from "./views/molecules";
+import { Footer, SearchForm } from "./views/organisms";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Box
+			sx={{
+				minHeight: "100vh",
+				flex: "1 0 auto",
+				display: "flex",
+				flexDirection: "column",
+			}}
+		>
+			<Box
+				sx={{
+					display: "flex",
+					flexDirection: "column",
+					mx: "auto",
+					width: "90%",
+					maxWidth: "600px",
+				}}
+			>
+				<TalkingChuck />
+				<AppTitle/>
+				<SearchForm />
+				<DisplayedJoke />
+			</Box>
+			<Footer />
+		</Box>
+	);
 }
 
 export default App;

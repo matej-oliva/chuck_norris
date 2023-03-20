@@ -1,0 +1,1 @@
+export {DisplayedJoke} from './DisplayedJoke'
