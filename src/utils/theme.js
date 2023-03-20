@@ -34,6 +34,7 @@ export function GlobalTheme({ children }) {
       padding: "0px",
       paddingLeft: "10px",
       height: "40px !important",
+			family: 'Patrick Hand, cursive !important'
     },
 	});
 

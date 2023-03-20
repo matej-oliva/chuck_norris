@@ -77,13 +77,17 @@ export function SearchForm({ setSnack }) {
 			<Box sx={{ width: "fit-content", mb: "20px" }} variant="text">
 				<Tooltip title="Get a new random joke">
 					<Button
+						className="font"
 						color="secondary"
 						variant="outlined"
 						aria-label="Get a new random joke button"
 						type="button"
 						onClick={reset}
 						endIcon={<Cached />}
-						sx={{background: (theme) => theme.palette.gradient.radial}}
+						sx={{
+							background: (theme) =>
+								theme.palette.gradient.radial,
+						}}
 					>
 						Reset
 					</Button>
@@ -96,7 +100,10 @@ export function SearchForm({ setSnack }) {
 							searchByText();
 						}
 					}}
-					sx={{ width: "100%" }}
+					sx={{
+						width: "100%",
+					}}
+					className="font"
 					placeholder="Search new Chuck Norris joke..."
 					inputProps={{
 						"aria-label": "Search new Chuck Norris joke",
@@ -114,7 +121,7 @@ export function SearchForm({ setSnack }) {
 			<Divider sx={{ my: "10px" }}>OR</Divider>
 			<Select
 				displayEmpty
-				inputProps={{ "aria-label": "Search by category" }}
+				inputProps={{ "aria-label": "Search by category","className": "font" }}
 				MenuProps={{ PaperProps: { sx: { maxHeight: 200 } } }}
 				sx={{ "& .MuiInputBase-input": (theme) => theme.inputBoxLook }}
 				value={category}
@@ -124,12 +131,22 @@ export function SearchForm({ setSnack }) {
 						: getAJokeByCategory(e.target.value);
 				}}
 			>
-				<MenuItem value="" sx={{ color: "#b5b5b5" }}>
+				<MenuItem
+					value=""
+					sx={{
+						color: "#b5b5b5",
+					}}
+					className="font"
+				>
 					Search by category...
 				</MenuItem>
 				{categories &&
 					categories.map((category, index) => (
-						<MenuItem key={index} value={category}>
+						<MenuItem
+							key={index}
+							value={category}
+							className="font"
+						>
 							{category}
 						</MenuItem>
 					))}

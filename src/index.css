@@ -1,7 +1,11 @@
 html, body {
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Patrick Hand', cursive !important;
   height: 100%;
   text-align: center;
+}
+
+.font{
+  font-family: 'Patrick Hand', cursive !important;
 }
 
 #root{
