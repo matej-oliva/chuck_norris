@@ -7,7 +7,6 @@ import {
 	InputBase,
 	MenuItem,
 	Select,
-	styled,
 	Tooltip,
 } from "@mui/material";
 import { useCallback, useState } from "react";
@@ -18,22 +17,6 @@ import {
 	fetchByText,
 	fetchRandomJoke,
 } from "../../features/joke";
-import { InputField } from "../atoms";
-
-const CustomInputField = styled(Select)(({ theme }) => ({
-	"& .MuiInputBase-input": {
-		background: theme.palette.gradient.radial,
-		border: "1px black solid",
-		borderRadius: "3px",
-		display: "flex",
-		flexDirection: "row",
-		alignItems: "center",
-		padding: "0px",
-		paddingRight: "20px",
-		paddingLeft: "20px",
-		height: "40px !important",
-	},
-}));
 
 export function SearchForm({ setSnack }) {
 	const [category, setCategory] = useState("");
@@ -69,7 +52,6 @@ export function SearchForm({ setSnack }) {
 				setCategory(category);
 				handleSnack(res.payload);
 				setSearchText("");
-				setCategory("");
 			});
 		},
 		[dispatch, handleSnack]
@@ -92,7 +74,7 @@ export function SearchForm({ setSnack }) {
 
 	return (
 		<>
-			<Box sx={{ width: "fit-content" }} variant="text">
+			<Box sx={{ width: "fit-content", mb: "20px" }} variant="text">
 				<Tooltip title="Get a new random joke">
 					<Button
 						color="secondary"
@@ -101,12 +83,13 @@ export function SearchForm({ setSnack }) {
 						type="button"
 						onClick={reset}
 						endIcon={<Cached />}
+						sx={{background: (theme) => theme.palette.gradient.radial}}
 					>
 						Reset
 					</Button>
 				</Tooltip>
 			</Box>
-			<InputField>
+			<Box sx={(theme) => theme.inputBoxLook}>
 				<InputBase
 					onKeyPress={(e) => {
 						if (e.key === "Enter") {
@@ -126,22 +109,23 @@ export function SearchForm({ setSnack }) {
 				<IconButton aria-label="search" onClick={searchByText}>
 					<Search />
 				</IconButton>
-			</InputField>
+			</Box>
+
 			<Divider sx={{ my: "10px" }}>OR</Divider>
 			<Select
 				displayEmpty
 				inputProps={{ "aria-label": "Search by category" }}
 				MenuProps={{ PaperProps: { sx: { maxHeight: 200 } } }}
+				sx={{ "& .MuiInputBase-input": (theme) => theme.inputBoxLook }}
 				value={category}
 				onChange={(e) => {
 					e.target.value === ""
 						? setCategory("")
 						: getAJokeByCategory(e.target.value);
 				}}
-				input={<CustomInputField />}
 			>
 				<MenuItem value="" sx={{ color: "#b5b5b5" }}>
-					<em>Search by category</em>
+					Search by category...
 				</MenuItem>
 				{categories &&
 					categories.map((category, index) => (
