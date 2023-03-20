@@ -14,7 +14,7 @@ export function InputField({children}) {
 				flexDirection: "row",
 				justifyContent: "space-between",
 				p: "10px",
-				my: "20px",
+				mt: "20px",
 			}}
 		>
 			{children}

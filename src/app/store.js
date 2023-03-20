@@ -7,5 +7,5 @@ export const store = configureStore({
     joke: jokeReducer,
     categories: categoriesReducer
   },
-  devTools: true
+  devTools: true,
 });
