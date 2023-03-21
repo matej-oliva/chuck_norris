@@ -3,6 +3,7 @@
 ---
 
 This app was created as a project for job application. It fetches jokes from <https://api.chucknorris.io/> and displays them as simple text.
+Deployed to Vercel: <https://chuck-norris-beta.vercel.app/>
 
 ## Available Scripts
 
