@@ -1,1 +1,1 @@
-export {DisplayedJoke} from './DisplayedJoke'
+export { DisplayedJoke } from './DisplayedJoke';

@@ -5,7 +5,7 @@ import categoriesReducer from '../features/categoryList';
 export const store = configureStore({
   reducer: {
     joke: jokeReducer,
-    categories: categoriesReducer
+    categories: categoriesReducer,
   },
   devTools: true,
 });
