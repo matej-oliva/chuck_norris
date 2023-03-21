@@ -1,20 +1,12 @@
 import PropTypes from 'prop-types';
 import { Cached, Search } from '@mui/icons-material';
-import {
-  Box,
-  Button,
-  Divider,
-  IconButton,
-  InputBase,
-  MenuItem,
-  Select,
-  Tooltip,
-} from '@mui/material';
+import { Box, Divider, IconButton, InputBase, MenuItem, Select } from '@mui/material';
 import { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { listOfCategories } from '../../features/categoryList';
 import { fetchByCategory, fetchByText, fetchRandomJoke } from '../../features/joke';
 import React from 'react';
+import { StandardButton } from '../atoms';
 
 export function SearchForm({ setSnack }) {
   const [category, setCategory] = useState('');
@@ -72,23 +64,16 @@ export function SearchForm({ setSnack }) {
 
   return (
     <>
-      <Box sx={{ width: 'fit-content', mb: '20px' }} variant='text'>
-        <Tooltip title='Get a new random joke'>
-          <Button
-            className='font'
-            color='secondary'
-            variant='outlined'
-            aria-label='Get a new random joke button'
-            type='button'
-            onClick={reset}
-            endIcon={<Cached />}
-            sx={{
-              background: (theme) => theme.palette.gradient.radial,
-            }}
-          >
-            Reset
-          </Button>
-        </Tooltip>
+      <Box sx={{ width: 'fit-content', my: '20px' }}>
+        <StandardButton
+          tooltip='Get a new random joke'
+          icon={<Cached />}
+          func={() => {
+            reset();
+          }}
+        >
+          Reset
+        </StandardButton>
       </Box>
       <Box sx={(theme) => theme.inputBoxLook}>
         <InputBase
