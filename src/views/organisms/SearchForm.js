@@ -115,7 +115,9 @@ export function SearchForm({ setSnack }) {
         </IconButton>
       </Box>
 
-      <Divider sx={{ my: '10px' }}>OR</Divider>
+      <Divider alt='divider' sx={{ my: '10px' }}>
+        OR
+      </Divider>
       <Select
         displayEmpty
         inputProps={{ 'aria-label': 'Search by category', className: 'font' }}

@@ -19,6 +19,6 @@ export function Text({ children, white, ...props }) {
 }
 
 Text.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.string,
   white: PropTypes.bool,
 };

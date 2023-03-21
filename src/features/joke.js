@@ -17,7 +17,9 @@ const initialState = {
 export const jokeSlice = createSlice({
   name: 'joke',
   initialState,
-  reducers: {},
+  reducers: {
+    //reducerName(state, action) { stuff to do with state }
+  },
   extraReducers(builder) {
     builder.addCase(fetchRandomJoke.fulfilled, (state, action) => {
       return (action.payload = {
@@ -74,5 +76,6 @@ export const fetchByText = createAsyncThunk('/search', async (query) => {
 });
 
 export const currentJoke = (state) => state.joke;
+//export const { reducerName } = createSlice.actions;
 
 export default jokeSlice.reducer;

@@ -17,7 +17,7 @@ export function TalkingChuck() {
         height='146px'
         width='146px'
         src='/img/chuck.png'
-        alt='chuck norris'
+        alt='chuck norris head image'
       ></img>
     </Box>
   );

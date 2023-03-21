@@ -45,6 +45,4 @@ export function GlobalTheme({ children }) {
 
 GlobalTheme.propTypes = {
   children: PropTypes.any,
-  className: PropTypes.any,
-  title: PropTypes.string,
 };
