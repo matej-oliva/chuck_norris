@@ -29,6 +29,7 @@ function App() {
           mx: 'auto',
           width: '90%',
           maxWidth: '600px',
+          mb: '60px',
         }}
       >
         <TalkingChuck />

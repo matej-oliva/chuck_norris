@@ -15,7 +15,7 @@ export function DisplayedJoke() {
             border: '1px black solid',
             borderRadius: '3px',
             p: '10px',
-            mt: '100px',
+            mt: '25%',
             width: '75%',
             mx: 'auto',
             textAlign: 'justify',
