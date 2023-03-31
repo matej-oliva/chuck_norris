@@ -1,20 +1,21 @@
-html, body {
+html,
+body {
   font-family: 'Patrick Hand', cursive !important;
   height: 100%;
   text-align: center;
 }
 
-.font{
+.font {
   font-family: 'Patrick Hand', cursive !important;
 }
 
-#root{
-  background: linear-gradient(347.95deg, #031E20 0%, #ECECEC 100%);
+#root {
+  background: linear-gradient(347.95deg, #031e20 0%, #ececec 100%);
 }
 
-#chuckimage{
+/* #chuckimage{
   border-radius: 50%;
-}
+} */
 
 .bubble {
   position: relative;
@@ -34,12 +35,12 @@ html, body {
 }
 
 .bubble-bottom-right::before {
-  content: "";
+  content: '';
   width: 0px;
   height: 0px;
   position: absolute;
   border-right: 94px solid #fff;
-  border-left:12px solid transparent;
+  border-left: 12px solid transparent;
   border-top: 25px solid #fff;
   border-bottom: 4px solid transparent;
   right: 2px;

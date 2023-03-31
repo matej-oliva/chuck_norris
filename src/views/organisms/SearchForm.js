@@ -129,6 +129,22 @@ export function SearchForm({ setSnack }) {
             </MenuItem>
           ))}
       </Select>
+      <StandardButton
+        style={{
+          width: 'fit-content',
+          mt: '10px',
+          ml: 'auto',
+        }}
+        func={() => {
+          if (category !== '' && category !== undefined) {
+            getAJokeByCategory(category);
+          } else {
+            setSnack({ msg: 'No category chosen', open: true, state: 'error' });
+          }
+        }}
+      >
+        Next in category
+      </StandardButton>
     </>
   );
 }

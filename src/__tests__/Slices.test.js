@@ -74,11 +74,11 @@ describe('jokeSlice', () => {
   });
 
   test('gets joke in category', async () => {
-    await store.dispatch(fetchByCategory('movie'));
+    await store.dispatch(fetchByCategory('animals'));
     const state = store.getState();
     const joke = currentJoke(state);
     expect(joke.value).not.toEqual('');
-    expect(joke.msg).toEqual('Successfuly found a joke in movie category!');
+    expect(joke.msg).toEqual('Successfuly found a joke in animals category!');
     expect(joke.status).toEqual('success');
   });
 });

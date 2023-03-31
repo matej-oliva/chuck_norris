@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Button, Tooltip } from '@mui/material';
 import React from 'react';
 
-export function StandardButton({ tooltip, func, icon, children }) {
+export function StandardButton({ tooltip, func, icon, children, style }) {
   return (
     <Tooltip title={tooltip}>
       <Button
@@ -13,9 +13,12 @@ export function StandardButton({ tooltip, func, icon, children }) {
         type='button'
         onClick={func}
         endIcon={icon}
-        sx={{
-          background: (theme) => theme.palette.gradient.radial,
-        }}
+        sx={[
+          {
+            background: (theme) => theme.palette.gradient.radial,
+          },
+          style,
+        ]}
       >
         {children}
       </Button>
@@ -24,8 +27,9 @@ export function StandardButton({ tooltip, func, icon, children }) {
 }
 
 StandardButton.propTypes = {
+  children: PropTypes.string,
   func: PropTypes.func,
   icon: PropTypes.element,
-  children: PropTypes.string,
+  style: PropTypes.object,
   tooltip: PropTypes.string,
 };

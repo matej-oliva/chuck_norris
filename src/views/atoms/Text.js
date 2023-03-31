@@ -19,6 +19,6 @@ export function Text({ children, white, ...props }) {
 }
 
 Text.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   white: PropTypes.bool,
 };

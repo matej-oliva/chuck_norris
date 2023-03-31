@@ -12,13 +12,14 @@ export function TalkingChuck() {
       }}
     >
       <div className='bubble bubble-bottom-right'>Lemme tell you a story...</div>
-      <img
-        id='chuckimage'
+      <Box
+        sx={{ borderRadius: '50%' }}
+        component='img'
         height='146px'
         width='146px'
         src='/img/chuck.png'
         alt='chuck norris head image'
-      ></img>
+      ></Box>
     </Box>
   );
 }
